@@ -10,7 +10,7 @@
                   <field name="images" context="{'default_name': name}" >
                     <tree editable="bottom">
                       <field name="name"></field>
-                      <field name="description"></field>
+                      <!--<field name="description"></field>-->
                       <field name="image"></field>
                     </tree>
                   </field>
