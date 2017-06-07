@@ -3,32 +3,32 @@
     <data>
         <record id="product_product_template_only_form_view" model="ir.ui.view">
             <field name="model">product.template</field>
-            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="inherit_id" ref="product.product_template_only_form_view"></field>
             <field name="arch" type="xml">
-                   <xpath expr="//page[2]" position="after">
-                   <page string="Product Images">
-		   <field name="images" context="{'default_name': name}">
-		        <tree editable="bottom">
-				<field name="name"/>
-				<field name="description"/>
-				<field name="image"/>
-		        </tree>
-		   </field>
-                   </page>
-                   </xpath>
+              <xpath expr="//page[2]" position="after">
+                <page string="Product Images">
+                  <field name="images" context="{'default_name': name}" >
+                    <tree editable="bottom">
+                      <field name="name"></field>
+                      <field name="description"></field>
+                      <field name="image"></field>
+                    </tree>
+                  </field>
+                </page>
+              </xpath>
             </field>
     </record>
     <record id="product_product_product_only_form_view" model="ir.ui.view">
             <field name="model">product.product</field>
-            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="inherit_id" ref="product.product_normal_form_view"></field>
             <field name="arch" type="xml">
                    <xpath expr="//page[2]" position="after">
                    <page string="Product Images">
 		   <field name="images" mode="kanban" context="{'default_name': name}">
 			<kanban>
-			    <field name="name"/>
-			    <field name="description"/>
-			    <field name="image"/>
+			    <field name="name"></field>
+			    <field name="description"></field>
+			    <field name="image"></field>
 			    <templates>
 				<t t-name="kanban-box">
 				    <div style="position: relative">
@@ -41,9 +41,9 @@
 						    <table class="oe_kanban_table">
 							<tr>
 							    <td class="oe_kanban_title1" align="left" valign="middle">
-								<h4><a type="open"><field name="name"/></a></h4>
+								<h4><a type="open"><field name="name"></field></a></h4>
 								<i><div t-if="record.description.raw_value">
-								    <field name="description"/></div></i>
+								    <field name="description"></field></div></i>
 							    </td>
 							</tr>
 						    </table>
