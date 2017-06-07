@@ -6,7 +6,8 @@ import urllib2
 import pdb
 
 class product_image(models.Model):
-    _name = 'product.image'
+    _inherit = 'product.image'
+    #_name = 'product.image'
 
     name = fields.Char('Name')
     description = fields.Text('Description')
