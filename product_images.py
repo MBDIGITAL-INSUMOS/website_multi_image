@@ -19,7 +19,7 @@ product_image()
 class product_product(models.Model):
     _inherit = 'product.product'
 
-    images = fields.Related('product_tmpl_id', 'images', type="one2many", relation="product.image", string='Images', store=False)
+    images = fields.One2many(related='product_tmpl_id.images', string='Images', store=False)
 
 product_product()
 
