@@ -1,29 +1,31 @@
-from openerp.osv import osv, fields
+from odoo import fields, osv, models, api
+from odoo.tools.translate import _
+import logging
+_logger = logging.getLogger(__name__)
+import urllib2
+import pdb
 
-class product_image(osv.Model):
+class product_image(models.Model):
     _name = 'product.image'
 
-    _columns = {
-        'name': fields.char('Name'),
-        'description': fields.text('Description'),
-        'image': fields.binary('Image'),
-        'image_small': fields.binary('Small Image'),
-        'product_tmpl_id': fields.many2one('product.template', 'Product'),
-    }
+    name = fields.Char('Name')
+    description = fields.Text('Description')
+    image = fields.Binary('Image')
+    image_small = fields.Binary('Small Image')
+    product_tmpl_id = fields.Many2one('product.template', 'Product')
+
 product_image()
 
-class product_product(osv.Model):
+class product_product(models.Model):
     _inherit = 'product.product'
 
-    _columns = {
-        'images': fields.related('product_tmpl_id', 'images', type="one2many", relation="product.image", string='Images', store=False),
-    }
+    images = fields.Related('product_tmpl_id', 'images', type="one2many", relation="product.image", string='Images', store=False)
+
 product_product()
 
-class product_template(osv.Model):
+class product_template(models.Model):
     _inherit = 'product.template'
-    
-    _columns = {
-        'images': fields.one2many('product.image', 'product_tmpl_id', string='Images'),
-    }
+
+    images = fields.One2many('product.image', 'product_tmpl_id', string='Images')
+
 product_template()

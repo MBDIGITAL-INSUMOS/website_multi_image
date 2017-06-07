@@ -6,8 +6,8 @@
     'author': 'Luke Branch',
     'depends': ['product','sale'],
     'data': [
-        'views/product_images.xml', 
-        'security/ir.model.access.csv', 
+        'views/product_images.xml',
+        'security/ir.model.access.csv',
     ],
     'application': True,
 }
