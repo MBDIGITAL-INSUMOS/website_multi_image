@@ -27,7 +27,7 @@
 		   <field name="images" mode="kanban" context="{'default_name': name}">
 			<kanban>
 			    <field name="name"></field>
-			    <field name="description"></field>
+			    <!--<field name="description"></field>-->
 			    <field name="image"></field>
 			    <templates>
 				<t t-name="kanban-box">
@@ -42,8 +42,8 @@
 							<tr>
 							    <td class="oe_kanban_title1" align="left" valign="middle">
 								<h4><a type="open"><field name="name"></field></a></h4>
-								<i><div t-if="record.description.raw_value">
-								    <field name="description"></field></div></i>
+								<!--<i><div t-if="record.description.raw_value">
+								    <field name="description"></field></div></i>-->
 							    </td>
 							</tr>
 						    </table>
