@@ -13,6 +13,7 @@ class product_image(models.Model):
     image = fields.Binary('Image')
     image_small = fields.Binary('Small Image')
     product_tmpl_id = fields.Many2one('product.template', 'Product')
+    imageurl = fields.Char(string='Image URL')
 
 product_image()
 
